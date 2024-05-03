@@ -31,10 +31,6 @@ class MyApp extends StatelessWidget {
 
 
 
-
-
-
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
@@ -90,472 +86,933 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: GridView(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 4,
-          mainAxisSpacing: 4,
-        ),
-        children: [
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/mood.jpg',
-                  picture_title: 'Mood',
-                ),
-              ),
+      body: OrientationBuilder(builder: (context, orientation) {
+        if (orientation == Orientation.landscape) {
+          return  GridView(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 4,
+              mainAxisSpacing: 4,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/mood.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+            children: [
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/mood.jpg',
+                      picture_title: 'Mood',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Mood',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/mood.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Mood',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/asthetic.jpg',
-                  picture_title: 'Asthetic',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/asthetic.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/asthetic.jpg',
+                      picture_title: 'Asthetic',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Asthetic',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/asthetic.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Asthetic',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/animal.jpg',
-                  picture_title: 'Animal',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/animal.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/animal.jpg',
+                      picture_title: 'Animal',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Animal',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/animal.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Animal',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/road.jpg',
-                  picture_title: 'Road',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/road.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/road.jpg',
+                      picture_title: 'Road',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Road',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/road.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Road',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/leaf.jpg',
-                  picture_title: 'Leaves',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/leaf.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/leaf.jpg',
+                      picture_title: 'Leaves',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Leaves',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/leaf.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Leaves',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/travel.jpg',
-                  picture_title: 'Travel',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/travel.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/travel.jpg',
+                      picture_title: 'Travel',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Travel',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/travel.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Travel',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/city.jpg',
-                  picture_title: 'Travel',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/city.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/city.jpg',
+                      picture_title: 'Travel',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'City',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/city.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'City',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/flower.jpg',
-                  picture_title: 'Flower',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/flower.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/flower.jpg',
+                      picture_title: 'Flower',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Flower',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/flower.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Flower',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/dawn.jpg',
-                  picture_title: 'Dawn',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/dawn.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/dawn.jpg',
+                      picture_title: 'Dawn',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Dawn',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/dawn.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Dawn',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                  picture_name: 'image/sky1.jpg',
-                  picture_title: 'Sky',
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage('image/sky1.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/sky1.jpg',
+                      picture_title: 'Sky',
                     ),
-                  ],
+                  ),
                 ),
-                alignment: Alignment.bottomLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Sky',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/sky1.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Sky',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
+            ],
+          );
+        } else {
+          return  GridView(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 4,
+              mainAxisSpacing: 4,
             ),
-          ),
-        ],
+            children: [
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/mood.jpg',
+                      picture_title: 'Mood',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/mood.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Mood',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/asthetic.jpg',
+                      picture_title: 'Asthetic',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/asthetic.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Asthetic',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/animal.jpg',
+                      picture_title: 'Animal',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/animal.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Animal',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/road.jpg',
+                      picture_title: 'Road',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/road.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Road',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/leaf.jpg',
+                      picture_title: 'Leaves',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/leaf.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Leaves',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/travel.jpg',
+                      picture_title: 'Travel',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/travel.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Travel',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/city.jpg',
+                      picture_title: 'Travel',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/city.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'City',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/flower.jpg',
+                      picture_title: 'Flower',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/flower.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Flower',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/dawn.jpg',
+                      picture_title: 'Dawn',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/dawn.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Dawn',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      picture_name: 'image/sky1.jpg',
+                      picture_title: 'Sky',
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage('image/sky1.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Sky',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          );
+        }
+      },
       ),
     );
   }
 }
-
-
-
-
 
 
 
@@ -619,37 +1076,101 @@ class DetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-//        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: 390,
-                height: 325,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  image: DecorationImage(
-                    image: AssetImage(picture_name),
-                    fit: BoxFit.cover,
+      body: OrientationBuilder(builder: (context, orientation) {
+        if (orientation == Orientation.landscape) {
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 9),
+                  child: Container(
+                    width: 372,
+                    height: 298,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage(picture_name),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        )
+                      ],
+                    ),
+                    //child: Image.asset(picture_name),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(1),
-                      spreadRadius: 7,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
-                    )
-                  ],
-                ),
-                //child: Image.asset(picture_name),
-              ),
+                )
+              ],
             ),
-          )
-        ],
-      ),
+          );
+        } else {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 390,
+                    height: 325,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: DecorationImage(
+                        image: AssetImage(picture_name),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(1),
+                          spreadRadius: 7,
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                        )
+                      ],
+                    ),
+                    //child: Image.asset(picture_name),
+                  ),
+                ),
+              )
+            ],
+          );
+        }
+      }),
+      // body: Column(
+      //   crossAxisAlignment: CrossAxisAlignment.center,
+      //   children: [
+      //     Center(
+      //       child: Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           width: 390,
+      //           height: 325,
+      //           decoration: BoxDecoration(
+      //             borderRadius: BorderRadius.circular(28),
+      //             image: DecorationImage(
+      //               image: AssetImage(picture_name),
+      //               fit: BoxFit.cover,
+      //             ),
+      //             boxShadow: [
+      //               BoxShadow(
+      //                 color: Colors.grey.withOpacity(1),
+      //                 spreadRadius: 7,
+      //                 blurRadius: 4,
+      //                 offset: Offset(0, 4),
+      //               )
+      //             ],
+      //           ),
+      //           //child: Image.asset(picture_name),
+      //         ),
+      //       ),
+      //     )
+      //   ],
+      // ),
     );
   }
 }
